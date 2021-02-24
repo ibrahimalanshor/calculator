@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+@layer components {
+	.bg {
+		@apply w-full h-screen bg-gradient-to-br from-purple-300 to-purple-500 text-gray-800 flex items-center justify-center;
+	}
+
+	.calculator {
+		@apply bg-white w-full mx-4 rounded shadow-lg;
+	}
+
+	.result {
+		@apply bg-gray-50 text-right rounded-t p-5;
+	}
+	.result span {
+		@apply text-gray-500 text-lg block mb-2;
+	}
+	.result input {
+		@apply block bg-transparent placeholder-gray-400 text-5xl focus:outline-none w-full text-right;
+	}
+
+	.buttons {
+		@apply flex;
+	}
+	.buttons .left {
+		@apply w-3/4 flex flex-wrap;
+	}
+	.buttons .right {
+		@apply w-1/4 flex flex-col;
+	}
+
+	.button {
+		@apply w-1/3 p-4 text-xl text-center;
+	}
+	.button:active {
+		@apply bg-gray-100 outline-none;
+	}
+	.button.bottom-left {
+		@apply rounded-bl;
+	}
+	.button.right {
+		@apply w-full bg-gray-800 text-white;
+	}
+	.button.right:active {
+		@apply bg-gray-900 outline-none;
+	}
+	.button.bottom-right {
+		@apply rounded-br;
+	}
+}
+
+@screen sm {
+	.calculator {
+		@apply w-80 mx-0;
+	}
+}
